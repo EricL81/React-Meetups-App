@@ -54,10 +54,12 @@ function MeetupItem(props) {
 					</div>
 					<div className={classes.actions}>
 						<button onClick={toggleFavoriteStatusHandler}>{itemIsFavorite ? "Remove from Favorites" : "To Favorites"}</button>
-						<i className="material-icons" onClick={() => setCurrentId(props.id)}>
+					</div>
+					<div className={classes.actions}>
+						<i className="material-icons" style={{ color: "green", cursor: "pointer" }} onClick={() => setCurrentId(props.id)}>
 							create
 						</i>
-						<i className="material-icons" onClick={() => onDeleteMeetupHandler(props.id)}>
+						<i className="material-icons" style={{ color: "red", cursor: "pointer" }} onClick={() => onDeleteMeetupHandler(props.id)}>
 							close
 						</i>
 					</div>
