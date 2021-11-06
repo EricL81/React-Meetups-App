@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+
 import { db } from "../../firebase";
 
 import Card from "../ui/Card";
@@ -54,7 +55,11 @@ function NewMeetupForm(props) {
 			description: enteredDescription,
 		};
 
-		props.onAddMeetup(meetupData);
+		if (currentId) {
+			props.onEditMeetup(meetupData);
+		} else {
+			props.onAddMeetup(meetupData);
+		}
 	}
 
 	return (

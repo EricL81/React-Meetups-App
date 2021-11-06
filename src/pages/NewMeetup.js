@@ -5,7 +5,7 @@ import { db } from "../firebase";
 function NewMeetupPage() {
 	const history = useHistory();
 
-	const addOrEditMeetupHandler = async (meetupData) => {
+	const addMeetupHandler = async (meetupData) => {
 		await db.collection("meetups").doc().set(meetupData);
 		console.log("new link added");
 		history.replace("/");
@@ -14,7 +14,7 @@ function NewMeetupPage() {
 	return (
 		<section>
 			<h1>New Meetup Page</h1>
-			<NewMeetupForm onAddMeetup={addOrEditMeetupHandler} />
+			<NewMeetupForm onAddMeetup={addMeetupHandler} />
 		</section>
 	);
 }

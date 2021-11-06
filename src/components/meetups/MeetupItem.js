@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { db } from "../../firebase";
+import { useHistory } from "react-router-dom";
 
 import Card from "../ui/Card";
 import classes from "./MeetupItem.module.css";
@@ -9,6 +10,7 @@ import NewMeetupForm from "./NewMeetupForm";
 function MeetupItem(props) {
 	const [currentId, setCurrentId] = useState("");
 	const favoritesCtx = useContext(FavoritesContext);
+	const history = useHistory();
 
 	const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
@@ -26,7 +28,12 @@ function MeetupItem(props) {
 		}
 	}
 
-	const onDeleteMeetup = async (id) => {
+	const editMeetupHandler = async (meetupData) => {
+		await db.collection("meetups").doc(currentId).update(meetupData);
+		history.go("/");
+	};
+
+	const onDeleteMeetupHandler = async (id) => {
 		if (window.confirm("Are you sure you want to delete this Meetup?")) {
 			await db.collection("meetups").doc(id).delete();
 		}
@@ -34,7 +41,7 @@ function MeetupItem(props) {
 	return (
 		<li className={classes.item}>
 			{currentId ? (
-				<NewMeetupForm currentId={currentId} />
+				<NewMeetupForm currentId={currentId} onEditMeetup={editMeetupHandler} />
 			) : (
 				<Card>
 					<div className={classes.image}>
@@ -50,7 +57,7 @@ function MeetupItem(props) {
 						<i className="material-icons" onClick={() => setCurrentId(props.id)}>
 							create
 						</i>
-						<i className="material-icons" onClick={() => onDeleteMeetup(props.id)}>
+						<i className="material-icons" onClick={() => onDeleteMeetupHandler(props.id)}>
 							close
 						</i>
 					</div>
