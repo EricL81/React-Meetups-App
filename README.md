@@ -5,12 +5,36 @@
 
 # About this project:
 
-This is a Single-Page-Application made with React. Where you can save your past and present Meetups (exhibitions, movies, parties, online events...) you have attended or plan to attend.
+This is a Single-Page-Application made with React, where you can save your past and present Meetups (exhibitions, movies, parties, online events...) you have attended or plan to attend.
+
 You can save new Meetups, consult all your Meetups, save a Meetup as Favorite and update the Meetup if necessary.
 
-Technology used: - React-DOM - React-router - Components - UseEffect Hook - UseContext hook - UseState hook - useHistory hook - React build-in <Card> and <Link> Components - Responsive
+Technology used:
+
+<ul>
+<li>React-DOM</li>
+<li>React-router</li>
+<li>Components</li>
+<li>UseEffect Hook</li>
+<li>UseContext hook</li>
+<li>UseState hook</li>
+<li>useHistory hook</li>
+<li>React build-in "Card" and "Link" Components</li>
+<li>Responsive</li>
+</ul>
 
 Database: Firestore of Firebase to store the Meetups in a NoSQL document-oriented database
+
+<br>  
+<br>  
+<br>
+
+## Stack used:
+
+<img align="left" alt="html5" src="https://img.shields.io/badge/-HTML-F64A1D?&style=for-the-badge&logo=html5&logoColor=white" />
+<img align="left" alt="css3" src="https://img.shields.io/badge/-CSS-2962E9?&style=for-the-badge&logo=css3&logoColor=white" />
+<img align="left" alt="javascript" src="https://img.shields.io/badge/-JAVASCRIPT-D89606?&style=for-the-badge&logo=javascript&logoColor=white" />
+<img align="left" alt="react" src="https://img.shields.io/badge/-react-4600b7?&style=for-the-badge&logo=react&logoColor=white" />
 
 <br>  
 <br>  
