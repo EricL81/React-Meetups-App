@@ -13,7 +13,7 @@ function NewMeetupPage() {
 
 	return (
 		<section>
-			<h1>New Meetup Page</h1>
+			<h1 style={{ color: "#2e0077" }}>New Meetup Page</h1>
 			<NewMeetupForm onAddMeetup={addMeetupHandler} />
 		</section>
 	);

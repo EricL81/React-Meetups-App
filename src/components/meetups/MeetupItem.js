@@ -53,15 +53,15 @@ function MeetupItem(props) {
 						<p>{props.description}</p>
 					</div>
 					<div className={classes.actions}>
-						<button onClick={toggleFavoriteStatusHandler}>{itemIsFavorite ? "Remove from Favorites" : "To Favorites"}</button>
-					</div>
-					<div className={classes.actions}>
-						<i className="material-icons" style={{ color: "green", cursor: "pointer" }} onClick={() => setCurrentId(props.id)}>
-							create
-						</i>
-						<i className="material-icons" style={{ color: "red", cursor: "pointer" }} onClick={() => onDeleteMeetupHandler(props.id)}>
-							close
-						</i>
+						<button className={classes.favorite} onClick={toggleFavoriteStatusHandler}>
+							{itemIsFavorite ? "Remove from Favorites" : "Favorite"}
+						</button>
+						<button className={classes.update} onClick={() => setCurrentId(props.id)}>
+							Update
+						</button>
+						<button className={classes.delete} onClick={() => onDeleteMeetupHandler(props.id)}>
+							Delete
+						</button>
 					</div>
 				</Card>
 			)}

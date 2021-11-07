@@ -32,7 +32,7 @@ function AllMeetupsPage() {
 
 	return (
 		<section>
-			<h1>All Meetups Page</h1>
+			<h1 style={{ "text-align": "center", color: "#2e0077" }}>All Meetups Page</h1>
 			<MeetupList meetups={loadedMeetups} />
 		</section>
 	);

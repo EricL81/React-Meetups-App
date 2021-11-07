@@ -3,15 +3,16 @@
     height: 5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #77002e;
+    justify-content: center;
+    background-color: #2e0077;
     padding: 0 10%;
 }
 
 .logo {
-    font-size: 2rem;
-    color: white;
+    font-size: 1rem;
+    color: white !important;
     font-weight: bold;
+    margin: auto 0;
 }
 
 .header ul {
@@ -20,15 +21,17 @@
     padding: 0;
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .header li {
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 
 .header a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fcb8d2;
 }
 
@@ -42,4 +45,20 @@
     border-radius: 12px;
     padding: 0 1rem;
     margin-left: 0.5rem;
+    font-size: 1rem
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 576px) {
+    .logo {
+        font-size: 1.7rem;
+    }
+    .header a {
+        font-size: 1.3rem;
+    }
 }
