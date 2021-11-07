@@ -23,6 +23,7 @@ function MeetupItem(props) {
 				title: props.title,
 				description: props.description,
 				image: props.image,
+				date: props.date,
 				address: props.address,
 			});
 		}
@@ -49,7 +50,18 @@ function MeetupItem(props) {
 					</div>
 					<div className={classes.content}>
 						<h3>{props.title}</h3>
-						<address>{props.address}</address>
+						<p>
+							<b>
+								<u>When:</u>
+							</b>{" "}
+							{props.date}
+						</p>
+						<address>
+							<b>
+								<u>Where:</u>
+							</b>{" "}
+							{props.address}
+						</address>
 						<p>{props.description}</p>
 					</div>
 					<div className={classes.actions}>

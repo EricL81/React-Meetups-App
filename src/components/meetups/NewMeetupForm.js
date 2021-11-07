@@ -11,6 +11,7 @@ function NewMeetupForm(props) {
 	const initialStateValues = {
 		title: "",
 		image: "",
+		date: "",
 		address: "",
 		description: "",
 	};
@@ -19,6 +20,7 @@ function NewMeetupForm(props) {
 
 	const titleInputRef = useRef();
 	const imageInputRef = useRef();
+	const dateInputRef = useRef();
 	const addressInputRef = useRef();
 	const descriptionInputRef = useRef();
 
@@ -45,12 +47,14 @@ function NewMeetupForm(props) {
 
 		const enteredTitle = titleInputRef.current.value;
 		const enteredImage = imageInputRef.current.value;
+		const enteredDate = dateInputRef.current.value;
 		const enteredAddress = addressInputRef.current.value;
 		const enteredDescription = descriptionInputRef.current.value;
 
 		const meetupData = {
 			title: enteredTitle,
 			image: enteredImage,
+			date: enteredDate,
 			address: enteredAddress,
 			description: enteredDescription,
 		};
@@ -72,6 +76,10 @@ function NewMeetupForm(props) {
 				<div className={classes.control}>
 					<label htmlFor="image">Meetup Image</label>
 					<input type="url" required id="image" name="image" value={values.image} onChange={handleInputChange} ref={imageInputRef} />
+				</div>
+				<div className={classes.control}>
+					<label htmlFor="date">Meetup Date</label>
+					<input type="date" required id="date" name="date" value={values.date} onChange={handleInputChange} ref={dateInputRef} />
 				</div>
 				<div className={classes.control}>
 					<label htmlFor="address">Address</label>
