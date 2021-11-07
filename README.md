@@ -1,6 +1,39 @@
-# App still in construction... More details to come...
+# Live Website: https://meetupsreact.netlify.app/
 
 <br>
+<br>
+
+# About this project:
+
+This is a Single-Page-Application made with React. Where you can save your past and present Meetups (exhibitions, movies, parties, online events...) you have attended or plan to attend.
+You can save new Meetups, consult all your Meetups, save a Meetup as Favorite and update the Meetup if necessary.
+
+Technology used: - React-DOM - React-router - Components - UseEffect Hook - UseContext hook - UseState hook - useHistory hook - React build-in <Card> and <Link> Components - Responsive
+
+Database: Firestore of Firebase to store the Meetups in a NoSQL document-oriented database
+
+<br>  
+<br>  
+<br>
+
+## Snapshots:
+
+![](meetups1.png)
+
+<br>
+
+![](meetups2.png)
+
+<br>
+
+![](meetups3.png)
+
+<br>
+
+![](meetups4.png)
+
+<br>  
+<br>  
 <br>
 
 # Getting Started with Create React App
