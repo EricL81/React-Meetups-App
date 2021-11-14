@@ -3,6 +3,7 @@ import AllMeetupsPage from "./pages/AllMeetups";
 import NewMeetupPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
 import SignUpPage from "./pages/SignUp";
+import LoginPage from "./pages/Login";
 import Layout from "./components/layout/Layout";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
 					</Route>
 					<Route path="/signup">
 						<SignUpPage />
+					</Route>
+					<Route path="/login">
+						<LoginPage />
 					</Route>
 				</Switch>
 			</Layout>
