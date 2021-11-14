@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../store/auth-context";
 
 import classes from "./MainNavigation.module.css";
 import FavoritesContext from "../../store/favorites-context";
 
 function MainNavigation() {
 	const favoritesCtx = useContext(FavoritesContext);
+	const { currentUser } = useAuth();
 
 	return (
 		<header className={classes.header}>
@@ -30,8 +32,13 @@ function MainNavigation() {
 						<Link to="/signup">Sign Up</Link>
 					</li>
 					<li>
-						<Link to="/login">Login</Link>
+						<Link to="/login">Log In</Link>
 					</li>
+					{currentUser ? (
+						<li>
+							<Link to="/user-dashboard">User</Link>
+						</li>
+					) : null}
 				</ul>
 			</nav>
 		</header>
