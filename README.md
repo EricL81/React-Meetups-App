@@ -23,7 +23,22 @@ Technology used:
 <li>Responsive</li>
 </ul>
 
+<br>
 Database: Firestore of Firebase to store the Meetups in a NoSQL document-oriented database
+<br>
+
+# Update 14/11/2021:
+
+Added full User Authentication with Firebase:
+
+<ul>
+<li>Sign Up</li>
+<li>Login</li>
+<li>Logout</li>
+<li>User Dashboard</li>
+<li>User Profile</li>
+<li>Profile Update</li>
+</ul>
 
 <br>  
 <br>  
