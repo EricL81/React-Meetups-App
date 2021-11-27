@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-import { db } from "../../firebase";
+import { db, auth } from "../../firebase";
 
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
@@ -50,6 +50,7 @@ function NewMeetupForm(props) {
 		const enteredDate = dateInputRef.current.value;
 		const enteredAddress = addressInputRef.current.value;
 		const enteredDescription = descriptionInputRef.current.value;
+		const userId = auth.currentUser.uid;
 
 		const meetupData = {
 			title: enteredTitle,
@@ -57,6 +58,7 @@ function NewMeetupForm(props) {
 			date: enteredDate,
 			address: enteredAddress,
 			description: enteredDescription,
+			userId: userId,
 		};
 
 		if (currentId) {

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../store/auth-context";
 import { Link, useHistory } from "react-router-dom";
+import { db, auth } from "../../firebase";
 
 export default function SignUpForm() {
 	const emailRef = useRef();
@@ -22,7 +23,25 @@ export default function SignUpForm() {
 		try {
 			setError("");
 			setLoading(true);
-			await signup(emailRef.current.value, passwordRef.current.value);
+			await signup(emailRef.current.value, passwordRef.current.value)
+				.then(() => {
+					db.collection("users")
+						.doc(auth.currentUser.uid)
+						.set({
+							firstName: "",
+							lastName: "",
+							alias: "",
+							email: emailRef.current.value,
+							userImg: null,
+						})
+						.catch((error) => {
+							console.log("Something went wrong with adding user to firestore");
+						});
+					console.log(db.collection("users"));
+				})
+				.catch((error) => {
+					console.log("Something went wrong with sign-up: ", error);
+				});
 			history.push("/");
 		} catch {
 			setError("Failed to create an account");

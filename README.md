@@ -1,5 +1,6 @@
 # Live Website: https://meetupsreact.netlify.app/
 
+Bigger project in construction, adding more functionalities each time...
 <br>
 <br>
 
