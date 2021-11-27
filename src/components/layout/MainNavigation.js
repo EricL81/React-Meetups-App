@@ -36,12 +36,14 @@ function MainNavigation() {
 					<li>
 						<Link to="/new-meetup">Add New Meetup</Link>
 					</li>
-					<li>
-						<Link to="/favorites">
-							My Favorites
-							<span className={classes.badge}>{favoritesCtx.totalFavorites}</span>
-						</Link>
-					</li>
+					{currentUser ? (
+						<li>
+							<Link to="/favorites">
+								My Favorites
+								<span className={classes.badge}>{favoritesCtx.totalFavorites}</span>
+							</Link>
+						</li>
+					) : null}
 					{!currentUser ? (
 						<>
 							<li>

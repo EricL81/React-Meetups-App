@@ -18,7 +18,7 @@ function App() {
 				<Switch>
 					<Route path="/" exact component={AllMeetupsPage}></Route>
 					<Route path="/new-meetup" component={NewMeetupPage}></Route>
-					<Route path="/favorites" component={FavoritesPage}></Route>
+					<PrivateRoute path="/favorites" component={FavoritesPage}></PrivateRoute>
 					<Route path="/signup" component={SignUpPage}></Route>
 					<Route path="/login" component={LoginPage}></Route>
 					<PrivateRoute path="/user-dashboard" component={UserDashboard}></PrivateRoute>

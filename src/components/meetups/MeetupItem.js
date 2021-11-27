@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { db } from "../../firebase";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../../store/auth-context";
 
 import Card from "../ui/Card";
 import classes from "./MeetupItem.module.css";
@@ -11,6 +12,8 @@ function MeetupItem(props) {
 	const [currentId, setCurrentId] = useState("");
 	const favoritesCtx = useContext(FavoritesContext);
 	const history = useHistory();
+
+	const { currentUser } = useAuth();
 
 	const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
@@ -64,17 +67,20 @@ function MeetupItem(props) {
 						</address>
 						<p>{props.description}</p>
 					</div>
-					<div className={classes.actions}>
-						<button className={classes.favorite} onClick={toggleFavoriteStatusHandler}>
-							{itemIsFavorite ? "Remove from Favorites" : "Favorite"}
-						</button>
-						<button className={classes.update} onClick={() => setCurrentId(props.id)}>
-							Update
-						</button>
-						<button className={classes.delete} onClick={() => onDeleteMeetupHandler(props.id)}>
-							Delete
-						</button>
-					</div>
+					{currentUser ? (
+						<div className={classes.actions}>
+							<button className={classes.favorite} onClick={toggleFavoriteStatusHandler}>
+								{itemIsFavorite ? "Remove from Favorites" : "Favorite"}
+							</button>
+
+							<button className={classes.update} onClick={() => setCurrentId(props.id)}>
+								Update
+							</button>
+							<button className={classes.delete} onClick={() => onDeleteMeetupHandler(props.id)}>
+								Delete
+							</button>
+						</div>
+					) : null}
 				</Card>
 			)}
 		</li>
