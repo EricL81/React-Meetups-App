@@ -13,8 +13,6 @@ export default function UserProfile() {
 		setUser({ ...userData.data() });
 	};
 
-	console.log(user);
-
 	useEffect(() => {
 		getUserById(currentUser.uid);
 	}, [currentUser.uid]);
@@ -39,7 +37,7 @@ export default function UserProfile() {
 					<strong>Email: </strong>
 					{user ? user.email : null}
 				</div>
-				<Link to="" className="btn btn-primary w-100 mt-3">
+				<Link to="/update-profile" className="btn btn-primary w-100 mt-3">
 					Update Profile
 				</Link>
 			</Card.Body>

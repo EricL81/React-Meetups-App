@@ -9,6 +9,7 @@ import UserDashboard from "./pages/UserDashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPasswordPage from "./pages/ForgotPassword";
 import UpdateCredentials from "./components/user/UpdateCredentials";
+import UpdateProfile from "./components/user/UpdateProfile";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/login" component={LoginPage}></Route>
 					<PrivateRoute path="/user-dashboard" component={UserDashboard}></PrivateRoute>
 					<PrivateRoute path="/update-credentials" component={UpdateCredentials}></PrivateRoute>
+					<PrivateRoute path="/update-profile" component={UpdateProfile}></PrivateRoute>
 					<Route path="/forgot-password" component={ForgotPasswordPage}></Route>
 				</Switch>
 			</Layout>
