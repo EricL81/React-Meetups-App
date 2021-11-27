@@ -8,7 +8,7 @@ import Layout from "./components/layout/Layout";
 import UserDashboard from "./pages/UserDashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPasswordPage from "./pages/ForgotPassword";
-import UpdateProfile from "./components/user/UpdateProfile";
+import UpdateCredentials from "./components/user/UpdateCredentials";
 
 function App() {
 	return (
@@ -21,7 +21,7 @@ function App() {
 					<Route path="/signup" component={SignUpPage}></Route>
 					<Route path="/login" component={LoginPage}></Route>
 					<PrivateRoute path="/user-dashboard" component={UserDashboard}></PrivateRoute>
-					<PrivateRoute path="/update-profile" component={UpdateProfile}></PrivateRoute>
+					<PrivateRoute path="/update-credentials" component={UpdateCredentials}></PrivateRoute>
 					<Route path="/forgot-password" component={ForgotPasswordPage}></Route>
 				</Switch>
 			</Layout>
